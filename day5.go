@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"slices"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -28,7 +29,6 @@ func FindLowestLocation_Pt2(input []string) {
 		var conversions []ConversionMap = make([]ConversionMap, 0)
 		for line := input[i]; len(line) > 2 && i < len(input); i++ {
 			parsed := ParseLine(line)
-			fmt.Println(parsed)
 			conversions = append(conversions, ConversionMap{parsed[0], parsed[1], parsed[2]})
 			if i+1 == len(input) {
 				break
@@ -36,6 +36,9 @@ func FindLowestLocation_Pt2(input []string) {
 			line = input[i+1]
 		}
 		i++
+		sort.Slice(conversions, func(i, j int) bool {
+			return conversions[i].source < conversions[j].source
+		})
 		new_seeds := ApplyMap_Pt2(conversions, seeds)
 		seeds = new_seeds
 	}
@@ -63,23 +66,22 @@ func ApplyMap_Pt2(conversions []ConversionMap, seeds []SeedRange) []SeedRange {
 				found = true
 				break
 			} else if seed.start < c.source && seed.end <= c.source+c.length-1 && seed.end >= c.source {
-				new_seed := SeedRange{seed.start, c.source - 1}
+				seed.end = c.source - 1
 				s := c.destination
 				e := c.destination + seed.end - c.source
 
 				new_ranges = append(new_ranges, SeedRange{s, e})
-				new_ranges = append(new_ranges, new_seed)
+				new_ranges = append(new_ranges, SeedRange{seed.start, seed.end})
 				found = true
-				break
 			} else if seed.start >= c.source && seed.end > c.source+c.length-1 && seed.start <= c.source+c.length-1 {
-				new_seed := SeedRange{c.source + c.length, seed.end}
+				seed.start = c.source + c.length - 1
+
 				s := c.destination + seed.start - c.source
 				e := c.destination + c.length - 1
 
 				new_ranges = append(new_ranges, SeedRange{s, e})
-				new_ranges = append(new_ranges, new_seed)
+				new_ranges = append(new_ranges, SeedRange{seed.start, seed.end})
 				found = true
-				break
 			} else if seed.start < c.source && seed.end > c.source+c.length-1 {
 				new_seed_first := SeedRange{seed.start, c.source - 1}
 				new_seed_second := SeedRange{c.source + c.length, seed.end}
@@ -90,6 +92,8 @@ func ApplyMap_Pt2(conversions []ConversionMap, seeds []SeedRange) []SeedRange {
 				new_ranges = append(new_ranges, new_seed_first)
 				new_ranges = append(new_ranges, new_seed_second)
 				found = true
+				seeds = append(seeds, new_seed_first)
+				seeds = append(seeds, new_seed_second)
 				break
 			}
 		}
