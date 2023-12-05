@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main() {
 	//Day 1
 	//for _, el := range input {
@@ -26,7 +22,12 @@ func main() {
 	//	}
 	//}
 	//sum := EngineParts(matrix)
-	input := ReadFile("4.txt")
-	sum := CalculatePoints(input)
-	fmt.Println(sum)
+
+	//Day 4
+	//sum := CalculatePoints(input)
+	//fmt.Println(sum)
+
+	input := ReadFile("5.txt")
+	FindLowestLocation_Pt2(input)
+	//FindLowestLocation_Pt2_BruteForce(input)
 }
