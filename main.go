@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	//Day 1
 	//for _, el := range input {
@@ -27,7 +29,11 @@ func main() {
 	//sum := CalculatePoints(input)
 	//fmt.Println(sum)
 
-	input := ReadFile("5.txt")
-	FindLowestLocation_Pt2(input)
+	// Day 5
+	//FindLowestLocation_Pt2(input)
 	//FindLowestLocation_Pt2_BruteForce(input)
+
+	input := ReadFile("6.txt")
+	fmt.Println(BoatRace(input, true))
+	fmt.Println(BoatRace(input, false))
 }
