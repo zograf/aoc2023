@@ -33,9 +33,13 @@ func main() {
 	//FindLowestLocation_Pt2(input)
 	//FindLowestLocation_Pt2_BruteForce(input)
 
-	input := ReadFile("7.txt")
 	// Day 6
 	//fmt.Println(BoatRace(input, true))
 	//fmt.Println(BoatRace(input, false))
-	fmt.Println(CamelCards(input))
+
+	// Day7
+	//fmt.Println(CamelCards(input))
+
+	input := ReadFile("8.txt")
+	fmt.Println(HauntedWasteland(input))
 }
