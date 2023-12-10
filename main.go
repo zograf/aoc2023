@@ -40,9 +40,12 @@ func main() {
 	// Day7
 	//fmt.Println(CamelCards(input))
 
-	input := ReadFile("9.txt")
 	// Day 8
     //fmt.Println(HauntedWasteland(input))
 
-    fmt.Println(Oasis(input))
+    // Day 9
+    //fmt.Println(Oasis(input))
+
+	input := ReadFile("10.txt")
+    fmt.Println(PipeMaze_Pt2(input))
 }
