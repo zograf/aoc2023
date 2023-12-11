@@ -46,6 +46,9 @@ func main() {
     // Day 9
     //fmt.Println(Oasis(input))
 
-	input := ReadFile("10.txt")
-    fmt.Println(PipeMaze_Pt2(input))
+    // Day 10
+    //fmt.Println(PipeMaze_Pt2(input))
+
+    input := ReadFile("11.txt")
+    fmt.Println(CosmicExpansion(input))
 }
