@@ -49,6 +49,9 @@ func main() {
     // Day 10
     //fmt.Println(PipeMaze_Pt2(input))
 
-    input := ReadFile("11.txt")
-    fmt.Println(CosmicExpansion(input))
+    // Day 11
+    // fmt.Println(CosmicExpansion(input))
+
+    input := ReadFile("12.txt")
+    fmt.Println(HotSprings(input))
 }
