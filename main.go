@@ -52,6 +52,9 @@ func main() {
     // Day 11
     // fmt.Println(CosmicExpansion(input))
 
-    input := ReadFile("12.txt")
-    fmt.Println(HotSprings(input))
+    // Day 12
+    //fmt.Println(HotSprings(input))
+
+    input := ReadFile("13.txt")
+    fmt.Println(LavaMirrors(input))
 }
