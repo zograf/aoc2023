@@ -55,6 +55,11 @@ func main() {
     // Day 12
     //fmt.Println(HotSprings(input))
 
-    input := ReadFile("13.txt")
-    fmt.Println(LavaMirrors(input))
+    // Day 13
+    //fmt.Println(LavaMirrors(input))
+
+    input := ReadFile("14.txt")
+    fmt.Println(ParabolicReflectorDish(input))
 }
+
+
