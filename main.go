@@ -58,8 +58,11 @@ func main() {
     // Day 13
     //fmt.Println(LavaMirrors(input))
 
-    input := ReadFile("14.txt")
-    fmt.Println(ParabolicReflectorDish(input))
+    // Day 14
+    //fmt.Println(ParabolicReflectorDish(input))
+
+    input := ReadFile("15.txt")
+    fmt.Println(HASHAlgorithm(input))
 }
 
 
