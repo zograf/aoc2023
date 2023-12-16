@@ -61,8 +61,11 @@ func main() {
     // Day 14
     //fmt.Println(ParabolicReflectorDish(input))
 
-    input := ReadFile("15.txt")
-    fmt.Println(HASHAlgorithm(input))
+    // Day 15
+    //fmt.Println(HASHAlgorithm(input))
+
+    input := ReadFile("16.txt")
+    fmt.Println(FloorIsLava(input))
 }
 
 
